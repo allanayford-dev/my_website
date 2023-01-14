@@ -29,8 +29,9 @@ app.use('/sales', salesRoutes);
 
 /* Mongoose Setup */
 const PORT = process.env.PORT || 9000;
+mongoose.set('strictQuery', false);
 mongoose
-	.connect(process.env.MONGODB_URL, {
+	.connect(process.env.MONGO_URL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
